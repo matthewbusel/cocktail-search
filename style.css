@@ -53,3 +53,10 @@ button:hover {
 .title {
   display: inline;
 }
+
+.error-message {
+  display: none;
+  color: magenta;
+  font-weight: bold;
+  font-size: 1.5em;
+}

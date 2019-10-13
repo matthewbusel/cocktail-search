@@ -5,6 +5,7 @@ const drinkName = document.querySelector(".drink-name");
 const drinkInstructions = document.querySelector(".drink-instructions");
 const ingredientOne = document.querySelector(".ingredientone");
 const ingredientTwo = document.querySelector(".ingredienttwo");
+const errorMessage = document.querySelector(".error-message");
 
 // CONSTS
 
@@ -24,7 +25,6 @@ function getDrinks() {
       return data;
     })
       .then(function(data) {
-        console.log(data);
         drink.name = data.drinks[0].strDrink;
         drink.instructions = data.drinks[0].strInstructions;
         drink.ingredients[0] = data.drinks[0].strIngredient1;
@@ -32,16 +32,29 @@ function getDrinks() {
 
         displayDrinks()
       })
+        .catch(e => {
+          displayError();
+        })
 };
 
 
 // DISPLAY SEARCH RESULTS
 function displayDrinks() {
+  errorMessage.style.display = "none";
   drinkName.innerHTML = `<b>Drink:</b> ${drink.name}`;
   drinkInstructions.innerHTML = `<b>Instructions:</b> ${drink.instructions}`;
   ingredientOne.innerHTML = `<b>Ingredient 1:</b> ${drink.ingredients[0]}`;
   ingredientTwo.innerHTML = `<b>Ingredient 2:</b> ${drink.ingredients[1]}`;
 };
+
+// DISPLAY ERROR
+function displayError() {
+  errorMessage.style.display = "block";
+  drinkName.innerHTML = `<b>Drink:</b>`;
+  drinkInstructions.innerHTML = `<b>Instructions:</b>`;
+  ingredientOne.innerHTML = `<b>Ingredient 1:</b>`;
+  ingredientTwo.innerHTML = `<b>Ingredient 2:</b>`;
+}
 
 // EVENT LISTENER
 
