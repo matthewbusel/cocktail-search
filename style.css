@@ -1,0 +1,55 @@
+* {
+  font-family: monospace;
+}
+
+.container {
+  padding: 30px;
+  margin: 10px;
+  background-color: pink;
+  border-radius: 20px;
+  max-width: 500px;
+  box-shadow: 0px 6px 16px #939393;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.main {
+  margin: 20px;
+}
+
+.form-container label {
+  font-size: 1.5em;
+}
+
+input {
+  font-size: 1.5em;
+  width: 150px;
+  border-radius: 5px;
+  color: magenta;
+}
+
+input:hover {
+  border-color: magenta;
+}
+
+button {
+  font-size: 1.5em;
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+
+button:hover {
+  background-color: magenta;
+}
+
+.image-container img {
+  width: 100px;
+  display: inline;
+}
+
+.title {
+  display: inline;
+}
